@@ -30,4 +30,4 @@ npm run dev;
 yarn deploy
 ```
 
-https://tjfs-umap-demo.surge.sh
+https://tfjs-umap-demo.surge.sh
