@@ -1,0 +1,33 @@
+html,
+body {
+  height: 100%;
+  font-family: avenir, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#inputs {
+  width: max(50vw, min(90vw, 500px));
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 0.25rem;
+  border: solid;
+}
+
+#start {
+  padding: 1rem;
+}
+
+#chart {
+  max-height: 50vh;
+  transition: filter 1s, height 1s, width 1s;
+  &.in-progress {
+    background: lightgrey;
+    filter: blur(5px);
+  }
+}

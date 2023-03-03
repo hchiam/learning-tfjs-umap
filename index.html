@@ -1,86 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>tfjs-tsne demo</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.14.1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-tsne"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
+    <title>TensorFlow.js Text Similarity Example</title>
+    <link href="index.scss" rel="stylesheet" />
+    <script src="index.ts" type="module"></script>
   </head>
   <body>
-    <p>References:</p>
-    <ul>
-      <li>
-        <a href="https://github.com/tensorflow/tfjs-tsne" target="_blank"
-          >https://github.com/tensorflow/tfjs-tsne</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/tensorflow/tfjs/tree/master/tfjs-vis"
-          target="_blank"
-          >https://github.com/tensorflow/tfjs/tree/master/tfjs-vis</a
-        >
-      </li>
-    </ul>
-
-    <p id="message">Wait for data to process...</p>
-
-    <script>
-      const data = tf.randomUniform([2000, 10]);
-      console.log("data", data);
-
-      const tsneOptimizer = tsne.tsne(data);
-      console.log("tsneOptimizer", tsneOptimizer);
-
-      const iterations = 100; // otherwise 1000 iterations by default
-
-      computeTSNEEmbedding(tsneOptimizer, iterations, (coordinatesArray) => {
-        plot(coordinatesArray, () => {
-          const message = "Done processing data!";
-          $("#message").text(message);
-          console.log(message);
-        });
-      });
-
-      function computeTSNEEmbedding(tsneOptimizer, iterations, callback) {
-        tsneOptimizer
-          .compute(iterations)
-          .then(() => {
-            // tsne.coordinate returns a *tensor* with x, y coordinates of
-            // the embedded data.
-            const coordinatesTensor = tsneOptimizer.coordinates();
-            console.log("coordinatesTensor", coordinatesTensor);
-            coordinatesTensor.print();
-
-            const coordinatesArray = tsneOptimizer.coordsArray();
-            return coordinatesArray;
-          })
-          .then((coordinatesArray) => {
-            console.log("coordinatesArray", coordinatesArray);
-            if (callback) callback(coordinatesArray);
-          });
-      }
-
-      function plot(coordinatesArray, callback) {
-        const series = coordinatesArray.map((x) => {
-          const label = `(${Math.round(x[0] * 100) / 100}, ${
-            Math.round(x[1] * 100) / 100
-          })`;
-          return { x: x[0], y: x[1], label: label };
-        });
-
-        const data = { values: [series], series: "series" };
-
-        const surface = { name: "Scatterplot", tab: "Charts" };
-        tfvis.render.scatterplot(surface, data).then(() => {
-          if (callback) callback();
-        });
-      }
-    </script>
+    <textarea id="inputs">
+I like my phone.
+Your cellphone looks great.
+How old are you?
+What is your age?
+An apple a day, keeps the doctors away.
+Eating strawberries is healthy.
+Stay healthy and eat lots of fruit and vegetables.
+This sample was sweet.
+This sample is sugary.
+It had a lot of sweetness.
+The food had a sugary taste.
+Sweet.
+Sweet
+Sweetness.
+Sugary.
+Sugar.
+Sugar
+I think it was quite sour.
+I had a very sour taste on my tongue.
+I tasted a sour aftertaste. I did not like it.
+</textarea
+    >
+    <button id="start">Start</button>
+    <p id="status">Not started yet...</p>
+    <canvas id="chart" class="in-progress"></canvas>
   </body>
 </html>
