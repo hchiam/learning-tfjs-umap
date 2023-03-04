@@ -6,6 +6,8 @@ Get **UMAP** output coordinates with [umap-js](https://github.com/PAIR-code/umap
 
 Great explanation of SNE vs t-SNE (vs UMAP - which sounds better than t-SNE): https://towardsdatascience.com/visualizing-your-embeddings-4c79332581a9 - basically UMAP is better than t-SNE is better than SNE (which is related to the order they were invented). My other repo that uses [tfjs-tsne](https://github.com/tensorflow/tfjs-tsne) can be found here: https://github.com/hchiam/learning-tfjs-tsne
 
+Learn more about TensorFlow at https://github.com/hchiam/learning-tensorflow
+
 ## Starting by testing out this repo
 
 Run `yarn global add parcel` or `npm install -g parcel`, and then:
