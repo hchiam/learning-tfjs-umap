@@ -58,7 +58,7 @@ async function runAnalysis(sentences, callback) {
     $("#status").css("color", "green");
 
     showStatus(
-      "Visualization ready! Hover over points to read comments. The model tries to group semantically similar comments near each other."
+      "Visualization ready! Hover over points to read comments. The model tries to group semantically similar comments near each other using UMAP (as opposed to PCA or t-SNE). The UMAP algorithm is stochastic (uses randomness) to speed up dimension reduction."
     );
 
     if (callback) callback();
