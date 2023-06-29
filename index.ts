@@ -97,6 +97,18 @@ function plot(coordinatesArray, labels, callback) {
         },
       },
       responsive: true,
+      scales: {
+        x: {
+          ticks: {
+            display: false,
+          },
+        },
+        y: {
+          ticks: {
+            display: false,
+          },
+        },
+      },
     },
   });
 
