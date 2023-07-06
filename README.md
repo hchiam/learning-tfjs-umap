@@ -2,6 +2,8 @@
 
 Just one of the things I'm learning. https://github.com/hchiam/learning
 
+Using (USE) Universal-Sentence-Encoder and UMAP to _attempt_ to graph sentences with semantically-similar meanings close together. UMAP is conceptually similar to PCA in that it also reduces dimensions, but UMAP is stochastic to help with speed of calculation for ML purposes, so the output of UMAP isn't always the same.
+
 Get **UMAP** output coordinates with [umap-js](https://github.com/PAIR-code/umap-js#umap-js) and visualization powered by [chart.js](https://github.com/chartjs/Chart.js).
 
 Great explanation of SNE vs t-SNE (vs UMAP - which sounds better than t-SNE): https://towardsdatascience.com/visualizing-your-embeddings-4c79332581a9 - basically UMAP is better than t-SNE is better than SNE (which is related to the order they were invented). My other repo that uses [tfjs-tsne](https://github.com/tensorflow/tfjs-tsne) can be found here: https://github.com/hchiam/learning-tfjs-tsne
