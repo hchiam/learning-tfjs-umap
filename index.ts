@@ -14,8 +14,10 @@ $("#start").on("click", () => {
     .filter((x) => x);
   if (sentences?.length) {
     $("#start").prop("disabled", true);
+    $(".chartjs-tooltip").remove();
     runAnalysis(sentences, () => {
       $("#start").prop("disabled", false);
+      $("#start").text("Re-run");
     });
   }
 });
@@ -143,9 +145,15 @@ function plot(coordinatesArray, labels, callback) {
           ticks: {
             display: false,
           },
+          grid: {
+            display: false,
+          },
         },
         y: {
           ticks: {
+            display: false,
+          },
+          grid: {
             display: false,
           },
         },
