@@ -58,7 +58,7 @@ async function runAnalysis(sentences, callback) {
     $("#status").css("color", "green");
 
     showStatus(
-      "Visualization ready! Hover over points to read comments. The model tries to group semantically similar comments near each other using UMAP (as opposed to PCA or t-SNE). The UMAP algorithm is stochastic (uses randomness) to speed up dimension reduction. More info at https://github.com/hchiam/learning-tfjs-umap"
+      "Visualization ready! Hover over points to read comments. The Universal-Sentence-Encoder model generates embeddings, then the code tries to group semantically similar comments near each other using UMAP (as opposed to PCA or t-SNE). The UMAP algorithm is stochastic (uses randomness) to speed up dimension reduction. More info at https://github.com/hchiam/learning-tfjs-umap"
     );
 
     if (callback) callback();
