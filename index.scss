@@ -24,10 +24,17 @@ body {
 }
 
 #chart {
-  max-height: 50vh;
-  transition: filter 1s, height 1s, width 1s;
+  // max-height: 50vh;
+  // transition: filter 1s, height 1s, width 1s;
   &.in-progress {
     background: lightgrey;
     filter: blur(5px);
+  }
+}
+
+#hide_tooltips {
+  margin-bottom: 3rem;
+  &:disabled {
+    opacity: 0;
   }
 }

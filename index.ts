@@ -91,12 +91,53 @@ function plot(coordinatesArray, labels, callback) {
       ],
     },
     options: {
+      aspectRatio: 1,
+      maintainAspectRatio: true,
+      // interaction: {
+      //   mode: "nearest",
+      // },
       plugins: {
         legend: {
           display: false,
         },
+        tooltip: {
+          // intersect: false,
+
+          enabled: false,
+
+          external: function (context) {
+            const canvasBox = context.chart.canvas.getBoundingClientRect();
+            const tooltip = context.tooltip;
+            const title = String(tooltip.title);
+            const left = String(tooltip.caretX + canvasBox.left) + "px";
+            const top = String(tooltip.caretY + canvasBox.top) + "px";
+
+            const tooltipSelector = `.chartjs-tooltip[data-title="${title}"]`;
+            const alreadyHaveTooltip = $(tooltipSelector).length > 0;
+
+            if (alreadyHaveTooltip) return;
+
+            const tooltipEl = document.createElement("div");
+            tooltipEl.className = "chartjs-tooltip";
+            tooltipEl.innerText = title;
+            tooltipEl.dataset.title = title;
+            tooltipEl.style.left = left;
+            tooltipEl.dataset.left = left;
+            tooltipEl.style.top = top;
+            tooltipEl.dataset.top = top;
+            tooltipEl.style.background = "#ffffff80";
+            tooltipEl.style.position = "absolute";
+            tooltipEl.style.pointerEvents = "none";
+            tooltipEl.style.borderRadius = "0.3rem";
+            tooltipEl.style.padding = "0.1rem";
+            document.body.appendChild(tooltipEl);
+            // setTimeout(() => $(tooltipSelector).remove(), 3000);
+
+            $("#hide_tooltips").prop("disabled", false);
+          },
+        },
       },
-      responsive: true,
+      responsive: false,
       scales: {
         x: {
           ticks: {
@@ -110,6 +151,14 @@ function plot(coordinatesArray, labels, callback) {
         },
       },
     },
+  });
+
+  $(window).on("resize", () => {
+    $(".chartjs-tooltip").remove();
+  });
+
+  $("#hide_tooltips").on("click", () => {
+    $(".chartjs-tooltip").remove();
   });
 
   if (callback) callback();
