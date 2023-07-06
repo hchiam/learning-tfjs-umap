@@ -14,14 +14,14 @@ Learn more about TensorFlow at https://github.com/hchiam/learning-tensorflow
 
 Run `yarn global add parcel` or `npm install -g parcel`, and then:
 
-Using [`yarn`](https://github.com/hchiam/learning-yarn): (triple-click to select all)
+Using [`yarn`](https://github.com/hchiam/learning-yarn):
 
 ```bash
 git clone https://github.com/hchiam/learning-tfjs-umap.git && cd learning-tfjs-umap && yarn;
 yarn dev;
 ```
 
-Or with `npm`: (triple-click to select all)
+Or with `npm`:
 
 ```bash
 git clone https://github.com/hchiam/learning-tfjs-umap.git && cd learning-tfjs-umap && npm install;
