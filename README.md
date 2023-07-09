@@ -10,6 +10,8 @@ Great explanation of SNE vs t-SNE (vs UMAP - which sounds better than t-SNE): ht
 
 Learn more about TensorFlow at https://github.com/hchiam/learning-tensorflow
 
+Repo created from this template for further experimentation: https://github.com/hchiam/comment-analysis
+
 ## Starting by testing out this repo
 
 Run `yarn global add parcel` or `npm install -g parcel`, and then:
