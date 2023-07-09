@@ -6,6 +6,8 @@ Using Universal-Sentence-Encoder (USE) and UMAP to _attempt_ to graph sentences 
 
 Get **UMAP** output coordinates with [umap-js](https://github.com/PAIR-code/umap-js#umap-js) and visualization powered by [chart.js](https://github.com/chartjs/Chart.js).
 
+Interactive explanation of UMAP: https://pair-code.github.io/understanding-umap
+
 Great explanation of SNE vs t-SNE (vs UMAP - which sounds better than t-SNE): https://towardsdatascience.com/visualizing-your-embeddings-4c79332581a9 - basically UMAP is better than t-SNE is better than SNE (which is related to the order they were invented). My other repo that uses [tfjs-tsne](https://github.com/tensorflow/tfjs-tsne) can be found here: https://github.com/hchiam/learning-tfjs-tsne
 
 Learn more about TensorFlow at https://github.com/hchiam/learning-tensorflow
