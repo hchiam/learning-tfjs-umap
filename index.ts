@@ -62,6 +62,7 @@ async function runAnalysis(sentences, callback) {
     showStatus(
       "Visualization ready! Hover over points to read comments. The Universal-Sentence-Encoder model generates embeddings, then the code tries to group semantically similar comments near each other using UMAP (as opposed to PCA or t-SNE). The UMAP algorithm is stochastic (uses randomness) to speed up dimension reduction. More info at https://github.com/hchiam/learning-tfjs-umap"
     );
+    $("#suggest_newer_demo").removeClass("d-none");
 
     if (callback) callback();
   });
