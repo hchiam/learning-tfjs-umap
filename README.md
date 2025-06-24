@@ -2,7 +2,7 @@
 
 Just one of the things I'm learning. https://github.com/hchiam/learning
 
-Using Universal-Sentence-Encoder (USE) and UMAP to _attempt_ to graph sentences with semantically-similar meanings close together. UMAP is conceptually similar to PCA in that it also reduces dimensions, but UMAP is stochastic to help with speed of calculation for ML purposes, so the output of UMAP isn't always the same.
+Using Universal-Sentence-Encoder (USE) and UMAP to _attempt_ to graph sentences with semantically-similar meanings close together. UMAP is conceptually similar to PCA in that it also reduces dimensions, but UMAP is stochastic to help with speed of calculation for ML purposes, so the output of UMAP isn't always the same every time you run it.
 
 Get **UMAP** output coordinates with [umap-js](https://github.com/PAIR-code/umap-js#umap-js) and visualization powered by [chart.js](https://github.com/chartjs/Chart.js).
 
